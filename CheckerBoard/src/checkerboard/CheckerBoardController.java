@@ -10,21 +10,29 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
+import gameboards.CheckerBoard;
+import javafx.stage.Stage;
 
 /**
  *
  * @author dominicpilla
  */
-public class CheckerBoardFXMLDocumentController implements Initializable {
+public class CheckerBoardController implements Initializable {
+    private Stage stage;
     
     @FXML
-    AnchorPane anchorPaneGrid;
+    AnchorPane anchorPane;
     
-    
+    public void start(Stage stage) {
+        this.stage = stage;
+        CheckerBoard checkerBoard = new CheckerBoard(600, 600, 8, 8);
+        anchorPane = checkerBoard.build();
+        System.out.println(anchorPane.getChildren());
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+
     }    
     
 }
