@@ -40,7 +40,10 @@ public class CheckerBoard {
         this.darkColor = darkColor;
     }
     
-    public AnchorPane build() {        
+    public AnchorPane build() {
+        
+        rectangleWidth = boardWidth / numRows;
+        rectangleHeight = boardHeight / numColumns;
         
         for( int row = 0; row < numRows; row++ ) {
             for( int column = 0; column < numColumns; column++ ) {

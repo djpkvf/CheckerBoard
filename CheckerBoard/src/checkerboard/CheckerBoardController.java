@@ -11,6 +11,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
 import gameboards.CheckerBoard;
+import javafx.event.ActionEvent;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
@@ -19,15 +21,45 @@ import javafx.stage.Stage;
  */
 public class CheckerBoardController implements Initializable {
     private Stage stage;
-    
+        
     @FXML
-    AnchorPane anchorPane;
+    VBox vBox;
     
     public void start(Stage stage) {
         this.stage = stage;
         CheckerBoard checkerBoard = new CheckerBoard(600, 600, 8, 8);
-        anchorPane = checkerBoard.build();
-        System.out.println(anchorPane.getChildren());
+        
+        vBox.getChildren().add(checkerBoard.build());
+    }
+    
+    @FXML
+    public void handleDefaultColorChange(ActionEvent event) {
+        
+    }
+    
+    @FXML
+    public void handleBlueColorChange(ActionEvent event) {
+        
+    }
+    
+    @FXML
+    public void handleGridResize16x16(ActionEvent event) {
+        
+    }
+    
+    @FXML
+    public void handleGridResize10x10(ActionEvent event) {
+        
+    }
+    
+    @FXML
+    public void handleGridResize8x8(ActionEvent event) {
+        
+    }
+    
+    @FXML
+    public void handleGridResize3x3(ActionEvent event) {
+        
     }
     
     @Override
