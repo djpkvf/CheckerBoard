@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/dominicpilla/Desktop/CheckerBoard/src/checkerboard/CheckerBoardFXMLDocument.fxml</file>
-            <file>file:/Users/dominicpilla/Desktop/CheckerBoard/src/checkerboard/CheckerBoard.java</file>
-            <file>file:/Users/dominicpilla/Desktop/CheckerBoard/src/checkerboard/CheckerBoardFXMLDocumentController.java</file>
+            <file>file:/Users/dominicpilla/NetBeansProjects/CheckerBoard/CheckerBoard/src/checkerboard/CheckerBoard.java</file>
+            <file>file:/Users/dominicpilla/NetBeansProjects/CheckerBoard/CheckerBoard/src/checkerboard/CheckerBoardFXMLDocumentController.java</file>
+            <file>file:/Users/dominicpilla/NetBeansProjects/CheckerBoard/CheckerBoard/src/gameboards/CheckerBoard.java</file>
         </group>
     </open-files>
 </project-private>
