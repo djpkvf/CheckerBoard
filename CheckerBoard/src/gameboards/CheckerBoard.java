@@ -22,7 +22,7 @@ public class CheckerBoard {
     private double rectangleWidth;
     private double rectangleHeight;
     
-    private AnchorPane anchorPane = new AnchorPane();
+    private AnchorPane anchorPane;
     
     public CheckerBoard( double boardWidth, double boardHeight, int numRows, int numColumns ) {
         this.boardWidth = boardWidth;
@@ -41,6 +41,8 @@ public class CheckerBoard {
     }
     
     public AnchorPane build() {
+        
+        anchorPane = new AnchorPane();
         
         rectangleWidth = boardWidth / numRows;
         rectangleHeight = boardHeight / numColumns;

@@ -9,10 +9,10 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.layout.AnchorPane;
 import gameboards.CheckerBoard;
 import javafx.event.ActionEvent;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
@@ -21,25 +21,41 @@ import javafx.stage.Stage;
  */
 public class CheckerBoardController implements Initializable {
     private Stage stage;
+    
+    private CheckerBoard checkerBoard;
         
     @FXML
     VBox vBox;
     
     public void start(Stage stage) {
         this.stage = stage;
-        CheckerBoard checkerBoard = new CheckerBoard(600, 600, 8, 8);
+        checkerBoard = new CheckerBoard(600, 600, 8, 8);
         
         vBox.getChildren().add(checkerBoard.build());
     }
     
+    private void clearGameBoard() {
+        if( checkerBoard.getBoard() != null ) {
+            vBox.getChildren().remove(checkerBoard.getBoard());
+        }
+    }
+    
     @FXML
     public void handleDefaultColorChange(ActionEvent event) {
-        
+        clearGameBoard();
+        checkerBoard = new gameboards.CheckerBoard(checkerBoard.getBoardWidth(),
+                checkerBoard.getBoardHeight(), checkerBoard.getNumRows(),
+                checkerBoard.getNumColumns());
+        vBox.getChildren().add(checkerBoard.build());
     }
     
     @FXML
     public void handleBlueColorChange(ActionEvent event) {
-        
+        clearGameBoard();
+        checkerBoard = new gameboards.CheckerBoard(checkerBoard.getBoardWidth(),
+                checkerBoard.getBoardHeight(), checkerBoard.getNumRows(), checkerBoard.getNumColumns(),
+                Color.LIGHTBLUE, Color.BLUE);
+        vBox.getChildren().add(checkerBoard.build());
     }
     
     @FXML
