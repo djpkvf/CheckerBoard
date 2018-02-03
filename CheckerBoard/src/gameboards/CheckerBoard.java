@@ -44,20 +44,22 @@ public class CheckerBoard {
         
         anchorPane = new AnchorPane();
         
-        rectangleWidth = boardWidth / numRows;
-        rectangleHeight = boardHeight / numColumns;
+        rectangleWidth = boardWidth / numColumns;
+        rectangleHeight = boardHeight / numRows;
         
         for( int row = 0; row < numRows; row++ ) {
             for( int column = 0; column < numColumns; column++ ) {
-                double xCoord = column * rectangleHeight;
-                double yCoord = row * rectangleWidth;
-                
-                Rectangle boardTile = new Rectangle(xCoord, yCoord, rectangleWidth, rectangleHeight);
-                
+
+                Color color;
                 if( (row % 2) == (column % 2) )
-                    boardTile.setFill(lightColor);
+                    color = lightColor;
                 else
-                    boardTile.setFill(darkColor);
+                    color = darkColor;
+                
+                Rectangle boardTile = new Rectangle(rectangleWidth, rectangleHeight, color);
+                
+                AnchorPane.setTopAnchor(boardTile, column * rectangleHeight);
+                AnchorPane.setLeftAnchor(boardTile, row * rectangleWidth);
                 
                 anchorPane.getChildren().add(boardTile);
             }
